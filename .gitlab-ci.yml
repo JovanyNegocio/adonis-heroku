@@ -1,0 +1,10 @@
+stages:
+  - test
+
+test:
+  stage: test
+  only:
+    - master
+  script:
+    - exit 0
+    
