@@ -15,5 +15,5 @@ deployServer:
     - master
 
   script:
-    - echo "===== START DEPLOY"
+    - echo "===== START DEPLOY ======"
     - ssh jovany@192.168.0.12 "cd /home/jovany/teste-cicd; git pull; npm i; pm2 restart server.js"
