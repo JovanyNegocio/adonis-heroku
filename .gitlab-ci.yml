@@ -1,5 +1,6 @@
 stages:
   - test
+  - deployServer
 
 test:
   stage: test
@@ -7,4 +8,12 @@ test:
     - master
   script:
     - exit 0
-    
+
+deployServer:
+  stage: deployServer
+  only:
+    - master
+
+  script:
+    - echo "===== START DEPLOY"
+    - ssh jovany@192.168.0.12 "cd /home/jovany/teste-cicd; git pull; npm i; pm2 restart server.js"
